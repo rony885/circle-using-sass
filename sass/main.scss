@@ -1,0 +1,87 @@
+$primary-color: #333;
+$secondary-color: green;
+$third-color: #4169E1;
+$fourth-color: black;
+$fivth-color: white;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 1100px;
+    margin: auto;
+}
+#main_menu{
+    background-color: $third-color;
+    padding: 30px 0;
+    .container{
+        display: flex;
+        .logo{
+            width: 20%;
+            a{
+                font-size: 50px;
+                color: $fivth-color;
+                font-family: sans-serif;
+            }
+        }
+        .menu{
+            width: 80%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            ul{
+                display: flex;
+                li{
+                    list-style: none;
+                    a{
+                        font-size: 18px;
+                        text-decoration: none;
+                        color: $fivth-color;
+                        font-family: sans-serif;
+                        font-weight: 700;
+                        margin-left: 20px;
+                        transition: 0.4s;
+                        position: relative;
+                        &:hover{
+                            color: blue;
+                        }
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: -5px;
+                            height: 3px;
+                            width: 0%;
+                            background-color: blue;
+                            transition: .4s;
+                        }
+                        &:hover::before{
+                            width: 100%;
+                            color: blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // &:hover ul li a{
+    //     color: blue !important;
+    // }
+}
+
+@mixin makeGolla($h, $w, $bg){
+    height: $h;
+    width: $w;
+    border-radius: 50%;
+    background-color: $bg; 
+}
+
+.golla{
+    @include makeGolla(200px, 200px, red )
+}
+.golla_2{
+    @include makeGolla(300px, 300px, green
+     )
+}
